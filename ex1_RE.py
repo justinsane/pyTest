@@ -11,7 +11,7 @@
 
 # $ python grep.py
 # Enter a regular expression: java$
-# mbox.txt had 4175 lines that matched java$ this is a test.
+# mbox.txt had 4175 lines that matched java$ 2nd test!
 
 import re
 fhand = open('mbox.txt')
