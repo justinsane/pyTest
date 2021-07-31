@@ -18,7 +18,7 @@ soup = BeautifulSoup(html, 'html.parser')
 # Retrieve all of the anchor tags
 
 
-for tag in tags:
-    print(tag.get('href', None))
+for tag in soup.find_all('a'):
+    print(tag.get('href'))
 
 # Code: http://www.py4e.com/code3/urllinks.py
