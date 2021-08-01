@@ -5,9 +5,6 @@ connect call. Add error checking using try and except to handle the condition wh
 formatted or non-existent URL.
 '''
 
-# WORK ON THIS:
-# Add error checking using try and except to handle the condition where the user enters an improperly formatted or non-existent URL.
-
 import socket
 import re
 
