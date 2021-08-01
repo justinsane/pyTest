@@ -12,14 +12,16 @@ import socket
 import re
 
 while True:
-    try:
-        my_web = input('Enter URL:  ')
-        re_web = re.findall('[http://]*[www.]*(\S+.com)', my_web)
-        break
-    except:
-        print('Enter a valid URL.')
+    my_web = input('Enter URL:  ')
+    check = re.search('http://*[www.]*\S+.com+', my_web)
+    print(check)
+    if check == None:
+        print("Bad URL - Try again.")
         continue
+    else:
+        break
 
+re_web = re.findall('[http://]*[www.]*(\S+.com)', my_web)
 mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysock.connect((re_web[0], 80))
 cmd = 'GET my_web HTTP/1.0\r\n\r\n'.encode()
