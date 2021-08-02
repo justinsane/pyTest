@@ -10,7 +10,7 @@ import re
 
 while True:
     my_web = input('Enter URL:  ')
-    check = re.search('http://*[www.]*\S+.com+', my_web)
+    check = re.search('https*://*[w.]*\S+.com+', my_web)
     print(check)
     if check == None:
         print("Bad URL - Try again.")
@@ -18,7 +18,7 @@ while True:
     else:
         break
 
-re_web = re.findall('[http://]*[www.]*(\S+.com)', my_web)
+re_web = re.findall('https*://*[w.]*(\S+.com)', my_web)
 mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysock.connect((re_web[0], 80))
 cmd = 'GET my_web HTTP/1.0\r\n\r\n'.encode()
